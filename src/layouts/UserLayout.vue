@@ -1,8 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-  import {RouterLink} from 'vue-router';
+  import { RouterLink, useRouter } from 'vue-router';
+
+  const router = useRouter();
 
   const isLoggedIn = ref(false);
+  const searchText = ref(''); 
+
 
     onMounted(() => {
         if (localStorage.getItem('isLoggedIn')  )  {
@@ -19,6 +23,17 @@ import { ref, onMounted } from 'vue';
     isLoggedIn.value = false;
     localStorage.removeItem('isLoggedIn');
   };
+
+   const handleSearch = (event ) => {
+      if (event.key === 'Enter') {
+         router.push ({
+            name: 'search',
+            query: { 
+               q: searchText.value 
+             }
+         })
+      } 
+   };
 </script>
 
 <template>
@@ -52,7 +67,8 @@ import { ref, onMounted } from 'vue';
                 Login
             </button>
          <div v-else class="flex gap-2">
-            <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+            <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" v-model="searchText"
+              @keyup="handleSearch" />
             <div class="dropdown dropdown-end">
                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                   <div class="w-10 rounded-full">

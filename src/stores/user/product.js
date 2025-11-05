@@ -21,10 +21,10 @@ export const useProductStore = defineStore('user-product', {
      },
 
      { 
-      name: 'tedsDt',
+      name: '11',
       imageUrl: 'https://media1.tenor.com/m/b2bcKSeqpnwAAAAC/nerd-pepe-the-frog.gif',
       quantity: 10,
-      about: 'testt',
+      about: 'testd',
       status: 'open',
       price: 100,
      },
@@ -36,21 +36,13 @@ export const useProductStore = defineStore('user-product', {
       about: 'testt',
       status: 'open',
       price: 100,
-     },
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ],
-        
-   
+     }],
     loaded: false
-  })
+  }),
+
+  actions: {
+    filterProducts(searchText) {
+      return this.list.filter(product => product.name.includes(searchText));
+    }
+  }
 })
