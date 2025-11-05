@@ -6,4 +6,4 @@ import UserLayout from '@/layouts/UserLayout.vue';
   <UserLayout>
     ProfileView
   </UserLayout>
- </template>
+</template>
