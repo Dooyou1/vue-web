@@ -25,7 +25,7 @@ import { ref, onMounted } from 'vue';
    <div class="container mx-auto">
       <div class="navbar bg-base-100 shadow-sm">
          <div class="flex-1">
-            <RouterLink :to="{name:'home'}" class="btn btn-ghost text-xl">Royal Highness</RouterLink>
+            <RouterLink :to="{name:'home'}" class="btn btn-ghost text-2xl">Royal Highness</RouterLink>
          </div>
          <div  class="dropdown dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
