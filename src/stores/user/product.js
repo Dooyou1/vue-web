@@ -13,29 +13,29 @@ export const useProductStore = defineStore('user-product', {
 
      { 
       name: 'teasDt',
-      imageUrl: 'https://media1.tenor.com/m/71rFa0hBgU4AAAAd/pepe-cheers-wink-pepe.gif',
+      imageUrl: 'https://images.pexels.com/photos/6358514/pexels-photo-6358514.jpeg',
       quantity: 10,
       about: 'testt',
       status: 'open',
-      price: 100,
+      price: 1000000000,
      },
 
      { 
       name: '11',
-      imageUrl: 'https://media1.tenor.com/m/b2bcKSeqpnwAAAAC/nerd-pepe-the-frog.gif',
+      imageUrl: 'https://images.pexels.com/photos/6358515/pexels-photo-6358515.jpeg',
       quantity: 10,
       about: 'testd',
       status: 'open',
-      price: 100,
+      price: 999999999,
      },
     
      { 
       name: 'tesDddt',
-      imageUrl: 'https://media1.tenor.com/m/1GsOX1uKTcAAAAAC/pepe-the-frog-pepe-frog.gif',
+      imageUrl: 'https://images.pexels.com/photos/1458867/pexels-photo-1458867.jpeg',
       quantity: 10,
       about: 'testt',
       status: 'open',
-      price: 100,
+      price: 999999999,
      }],
     loaded: false
   }),

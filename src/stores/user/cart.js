@@ -1,18 +1,11 @@
 import {
     defineStore
-} from 'pinia'
-
+} from 'pinia'                                  
+         
 export const useUserCartStore = defineStore('user-cart', {
     state: () => ({
-        items: [{
-            name: 'test',
-            imageUrl: 'https://media1.tenor.com/m/ywcfqDiEokgAAAAd/pepe-smart-pepe-watch.gif',
-            quantity: 10,
-            about: 'testt',
-            status: 'open',
-            price: 100,
-            quantity: 1
-        }]
+        items: [],
+        checkout: {} 
     }),
     getters: {
         summaryPrice(state) {
@@ -48,6 +41,16 @@ export const useUserCartStore = defineStore('user-cart', {
         removeItemInCart(index) {
             this.items.splice(index, 1)
             localStorage.setItem('cart-item', JSON.stringify(this.items))
+        },
+        checkout (userData){
+            const orderData = {
+                ...userData,
+            totalPrice: this.summaryPrice,
+            paymentMethod : 'cash',
+            createdDate : (new Date()).toISOString(),
+            o
         }
+        
+    }
     }
 })
