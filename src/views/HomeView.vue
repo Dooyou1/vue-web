@@ -3,7 +3,16 @@ import UserLayout from '@/layouts/UserLayout.vue';
 import Product from '@/components/Product.vue';
 
 import { useProductStore } from '@/stores/user/product'
+
 const productStore = useProductStore()
+
+
+const addToCart = (product) => {
+  console.log('Add to cart clicked');
+  console.log(product);
+  
+} 
+
 </script>
 
 <template>
@@ -20,7 +29,9 @@ const productStore = useProductStore()
     </div>
 
     <!--สินค้า-->
-    <Product :products="productStore.list"></Product>
-  
+    <Product 
+      :products="productStore.list"
+      :addToCart="addToCart">
+    </Product>
   </UserLayout>
 </template>
