@@ -26,8 +26,10 @@ const Login = () => {
 const Logout = () => {
    isLoggedIn.value = false;
    localStorage.removeItem('isLoggedIn');
-
-   cartStore.clearCart();
+   localStorage.removeItem('cart-item');
+   localStorage.removeItem('order-data');
+   const homeRoute = router.resolve({ name: 'home' })
+   window.location.href = homeRoute.href;;
 };
 
 const handleSearch = (event) => {
