@@ -44,7 +44,7 @@ onMounted(() => {
       </div>
 
       <div class="divider"></div>
-      <div v-for="products in orderData.products" class="grid grid-cols-4 gap-2 mb-4">
+      <div v-for="products in orderData.products" class="grid grid-cols-4 gap-2 mb-4 items-center">
         <div>
           <div>
             <img :src="products.imageUrl" class="w-30 h-30 object-covr"/>
@@ -52,7 +52,7 @@ onMounted(() => {
         </div>
         <div>
           <div>
-            {{ products.name }}
+            ชื่อ: {{ products.name }}
           </div>
         </div>
         <div>
@@ -67,7 +67,13 @@ onMounted(() => {
         </div>
       </div>
       <div class="divider"></div>
+         <div class="flex justify-between">
+          <div>ราคาสินค้าทั้งหมด</div>
+         <div>{{ orderData.totalPrice }}</div>
       <div class="divider"></div>
+          <div class="flex justify-between">
+            <div class="font-bold">
+          </div>
       <div class="divider"></div>
       <div>ขอบคุณที่มาซื้อ</div>
     </div>
