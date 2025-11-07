@@ -17,7 +17,7 @@ onMounted(() => {
 
 <template>
   <UserLayout>
-    <div class="max-w-2x1 mx-auto border border-base-200 shadow-xl p-8">
+    <div class="max-w-2x1 mx-auto border border-base-200 shadow-xl p-8 my-4">
       <div>
         <div class="text-2xl fon-bold">Your order is successful!</div>
         <div>Hi {{ orderData.name }}</div>
@@ -42,40 +42,56 @@ onMounted(() => {
           <div>{{ orderData.address }}</div>
         </div>
       </div>
+    </div>
 
-      <div class="divider"></div>
-      <div v-for="products in orderData.products" class="grid grid-cols-4 gap-2 mb-4 items-center">
+    <div class="divider"></div>
+    <div v-for="products in orderData.products" class="grid grid-cols-4 gap-2 mb-5 mx-5 items-center">
+      <div>
         <div>
-          <div>
-            <img :src="products.imageUrl" class="w-30 h-30 object-covr"/>
-          </div>
-        </div>
-        <div>
-          <div>
-            ชื่อ: {{ products.name }}
-          </div>
-        </div>
-        <div>
-          <div>
-            จำนวน: {{ products.quantity }}
-          </div>
-        </div>
-        <div>
-          <div>
-            ราคารวม : {{ products.price * products.quantity }} บาท
-          </div>
+          <img :src="products.imageUrl" class="w-30 h-30 object-covr" />
         </div>
       </div>
-      <div class="divider"></div>
-         <div class="flex justify-between">
-          <div>ราคาสินค้าทั้งหมด</div>
-         <div>{{ orderData.totalPrice }}</div>
-      <div class="divider"></div>
-          <div class="flex justify-between">
-            <div class="font-bold">
-          </div>
-      <div class="divider"></div>
-      <div>ขอบคุณที่มาซื้อ</div>
+      <div>
+        <div>
+          ชื่อ: {{ products.name }}
+        </div>
+      </div>
+      <div>
+        <div>
+          จำนวน: {{ products.quantity }}
+        </div>
+      </div>
+      <div>
+        <div>
+          ราคารวม : {{ products.price * products.quantity }} บาท
+        </div>
+      </div>
     </div>
+
+    <div class="divider"></div>
+    <div class="flex justify-between mx-5">
+      <div>ราคาสินค้าทั้งหมด</div>
+      <div>{{ orderData.totalPrice }}</div>
+    </div>
+    <div class="flex justify-between mx-5">
+      <div>ค่าส่ง</div>
+      <div>10</div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="flex justify-between mx-5">
+      <div>ราคาทั้งสิ้น</div>
+      <div>{{ orderData.totalPrice+10 }}</div>
+    </div>  
+    
+     <div class="divider"></div>
+    <div class="flex justify-between mx-5">
+      <div>ขอบคุณที่มาซื้อ</div>
+    </div>  
+
+
+
+
+
   </UserLayout>
 </template>

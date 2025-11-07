@@ -116,12 +116,12 @@ const checkout = () => {
                 </div>
                 <div class="flex align-middle justify-between mb-2">
                   <div class="font-bold">ค่าส่ง</div>
-                  <div>0</div>
+                  <div>10</div>
                 </div>
                 <div class="divider"></div>
                 <div class="flex align-middle justify-between mb-2">
                   <div class="font-bold">ราคาทั้งสิ้น</div>
-                  <div>{{ userCartStore.summaryPrice }}</div>
+                  <div>{{ userCartStore.summaryPrice+10 }}</div>
                 </div>
               </div>
             </div>

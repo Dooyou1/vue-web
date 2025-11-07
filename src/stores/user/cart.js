@@ -50,7 +50,7 @@ export const useUserCartStore = defineStore('user-cart', {
                         totalPrice: this.summaryPrice,
                         paymentMethod: 'cash',
                         createdDate: (new Date()).toISOString(),
-                        orderNumber: 'AA${Math.floor((Math.random() * 90000) + 10000)}',
+                        orderNumber: `AA${Math.floor((Math.random() * 90000) + 10000)}`,
                         products : this.items
                     }
 
