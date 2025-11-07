@@ -71,7 +71,7 @@ const changeQuantity = (event, index) => {
             <div> {{ cartStore.summaryPrice }} </div>
           </div>
             <RouterLink :to="{ name: 'checkout'}" class="btn btn-primary w-full mt-4"> 
-              ชำระเงิน
+              ไปหน้าชำระเงิน
             </RouterLink>
         </div>
       </div>

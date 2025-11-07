@@ -26,6 +26,8 @@ const Login = () => {
 const Logout = () => {
    isLoggedIn.value = false;
    localStorage.removeItem('isLoggedIn');
+
+   cartStore.clearCart();
 };
 
 const handleSearch = (event) => {

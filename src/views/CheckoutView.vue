@@ -25,11 +25,27 @@ const checkoutForm = [
 ]
 
 const userCartStore = useUserCartStore()
-const userCheckoutData = reactive({})
+const userCheckoutData = reactive({
+  email: '',
+  name: '',
+  address: '',
+  note: ''
+})
 const router = useRouter()
+
+const payment = () => {
+  cartStore.checkout(userCheckoutData)
+  router.push({ name: 'success' })
+}
+ 
 
 const checkout = () => {
   // submit checkout data
+  if (!userCheckoutData.email || !userCheckoutData.name || !userCheckoutData.address) {
+    alert('การกรอกข้อมูลไม่ครบถ้วน')
+    return
+  }
+
   userCartStore.checkout(userCheckoutData)
   router.push({ name: 'success' })
 }
